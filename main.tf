@@ -20,11 +20,24 @@ provider "aws"{
 
 #}
 
-module "sg_rules" {
-  source = "../child_modules/sg_rules"
+#module "sg_rules" {
+ # source = "../child_modules/sg_rules"
 
-  name = var.name 
-  description = var.description
+  #name = var.name 
+  #description = var.description
+
+#}
+
+module "vpc" {
+  
+  source = "../child_modules/vpc"
+
+  vpc_cidr = var.vpc_cidr
+  public_subnets =var.public_subnets
+  private_subnets = var.private_subnets
+  azs = var.azs
+  environment = var.environment 
 
 }
+
 
