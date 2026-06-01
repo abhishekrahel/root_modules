@@ -15,7 +15,7 @@ resource "aws_instance" ansible {
     instance_type = var.instance_type
     tags = var.tags
     region = var.region
-    key_name      = aws_key_pair.deployer.key_name
+    #key_name      = aws_key_pair.deployer.key_name
     
 }
 

@@ -28,14 +28,17 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
+    - name: Terraform Format Check
+      run: terraform fmt -check
+
     - name: Terraform Validate
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan 
+      run: terraform plan -var-file="input.tfvars"
 
     - name: Terraform Apply
-      run: terraform apply -var-file=input.tfvars -auto-approve=yes
+      run: terraform apply -var-file="input.tfvars" -auto-approve
 
 
 
