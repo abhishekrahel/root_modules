@@ -26,7 +26,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         I am fine thank you!
+         echo I am fine thank you!
 
  
  
