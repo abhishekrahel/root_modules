@@ -35,7 +35,7 @@ jobs:
       run: terraform plan 
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve=yes
+      run: terraform apply -var-file=input.tfvars -auto-approve=yes
 
 
 
