@@ -19,10 +19,10 @@ resource "aws_instance" ansible {
     
 }
 
-resource "aws_key_pair" "deployer"{
-    key_name   = "deployer_key"
-    public_key = file ("C:/Users/admin/.ssh/id_rsa.pub")
-}
+#resource "aws_key_pair" "deployer"{
+  #  key_name   = "deployer_key"
+ #   public_key = file ("C:/Users/admin/.ssh/id_rsa.pub")
+#}
 
 #module "ansible_server" {
  # source = "../child_modules/ec2_Ansible"
