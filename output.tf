@@ -4,8 +4,13 @@
 #}
 
 output "instance_type" {
-  value = module.ansible_server.instance_name
+  value = aws_instance.ansible.instance_type
+  
 }
+
+#output "instance_type" {
+ # value = module.ansible_server.instance_name
+#}
 
 #output "sg_name" {
 #  value = module.sg_rules.sg_name
