@@ -10,15 +10,15 @@ provider "aws"{
     region = "us-east-1"
 }
 
-#module "ansible_server" {
- # source = "../child_modules/ec2_Ansible"
+module "ansible_server" {
+  source = "../child_modules/ec2_Ansible"
 
-  #  ami = var.ami
-  #  instance_type = var.instance_type
-  #  tags = var.tags
-  #  region = var.region
+    ami = var.ami
+    instance_type = var.instance_type
+    tags = var.tags
+    region = var.region
 
-#}
+}
 
 #module "sg_rules" {
  # source = "../child_modules/sg_rules"
@@ -28,16 +28,16 @@ provider "aws"{
 
 #}
 
-module "vpc" {
+#module "vpc" {
   
-  source = "../child_modules/vpc"
+#  source = "../child_modules/vpc"
 
-  vpc_cidr = var.vpc_cidr
-  public_subnets =var.public_subnets
-  private_subnets = var.private_subnets
-  azs = var.azs
-  environment = var.environment 
+ # vpc_cidr = var.vpc_cidr
+ # public_subnets =var.public_subnets
+ # private_subnets = var.private_subnets
+ # azs = var.azs
+ # environment = var.environment 
 
-}
+#}
 
 
