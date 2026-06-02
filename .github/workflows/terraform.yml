@@ -35,10 +35,33 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan -var-file="input.tfvars"
+      run: terraform plan -out=tfplan -var-file="input.tfvars"
 
-    - name: Terraform Apply
-      run: terraform apply -var-file="input.tfvars" -auto-approve
+    - name: Upload Plan
+      uses: actions/upload-artifact@v4
+      with:
+       name: tfplan
+       path: tfplan
+
+       apply:
+    needs: plan
+    runs-on: ubuntu-latest
+
+    environment:
+      name: Production
+
+      steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Download Plan
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan
+
+      - name: Terraform Apply
+       run: terraform apply -var-file="input.tfvars" -auto-approve -tfplan
 
 
 
