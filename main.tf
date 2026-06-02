@@ -10,29 +10,29 @@ provider "aws"{
     region = "us-east-1"
 }
 
-resource "aws_instance" ansible {
-    ami = var.ami
-    instance_type = var.instance_type
-    tags = var.tags
-    region = var.region
-    #key_name      = aws_key_pair.deployer.key_name
+# resource "aws_instance" ansible {
+#     ami = var.ami
+#     instance_type = var.instance_type
+#     tags = var.tags
+#     region = var.region
+#     #key_name      = aws_key_pair.deployer.key_name
     
-}
+# }
 
 #resource "aws_key_pair" "deployer"{
   #  key_name   = "deployer_key"
  #   public_key = file ("C:/Users/admin/.ssh/id_rsa.pub")
 #}
 
-#module "ansible_server" {
- # source = "../child_modules/ec2_Ansible"
+module "ansible_server" {
+ source = "./sample_module_pipeline"
 
-  #  ami = var.ami
-   # instance_type = var.instance_type
-   # tags = var.tags
-   # region = var.region
+   ami = var.ami
+   instance_type = var.instance_type
+   tags = var.tags
+   region = var.region
 
-#}
+}
 
 #module "sg_rules" {
  # source = "../child_modules/sg_rules"
