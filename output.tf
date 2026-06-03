@@ -8,8 +8,8 @@
   
 # }
 
-output "instance_type" {
- value = module.ansible_server.instance_name
+output "jenkins_agent_name" {
+ value = module.jenkins_agent.instance_name
 }
 
 #output "sg_name" {

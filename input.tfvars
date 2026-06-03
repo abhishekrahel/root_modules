@@ -1,6 +1,6 @@
 ami = "ami-091138d0f0d41ff90"
 instance_type = "t3.micro"
-tags = { Name = "Jenkins" }
+tags = { Name = "Jenkins_Agent" }
 region = "us-east-1"
 
 #ami = "ami-091138d0f0d41ff90"

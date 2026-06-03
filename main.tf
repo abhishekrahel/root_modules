@@ -24,7 +24,7 @@ provider "aws"{
  #   public_key = file ("C:/Users/admin/.ssh/id_rsa.pub")
 #}
 
-module "ansible_server" {
+module "jenkins_agent" {
  source = "./sample_module_pipeline"
 
    ami = var.ami
