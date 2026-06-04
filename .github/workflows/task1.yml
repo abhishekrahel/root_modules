@@ -28,8 +28,9 @@ jobs:
         run: |
          cd dir; touch file
          echo dir and file created!
-         echo "This is a test file" 
+         echo "This is a test file once again"
          
+
 
  
  
